@@ -587,3 +587,9 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { backendAPI } from '@/api/backendAPI';
+
+console.log(backendAPI);
+</script>
