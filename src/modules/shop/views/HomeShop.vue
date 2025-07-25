@@ -100,15 +100,15 @@
 
 <script setup lang="ts">
 import { getProducts } from '@/modules/products/actions';
-import { useQuery } from '@tanstack/vue-query';
+import { useQuery, useQueryClient } from '@tanstack/vue-query';
 import ProductList from '../components/products/ProductList.vue';
 import PaginationButton from '@/modules/common/components/PaginationButton.vue';
 import { useRoute } from 'vue-router';
-import { ref, watch } from 'vue';
+import { ref, watch, watchEffect } from 'vue';
 
 const route = useRoute();
 const page = ref(Number(route.query.page || 1));
-console.log(page);
+const queryClient = useQueryClient();
 
 const { data: products, isLoading } = useQuery({
   queryKey: ['products', { page: page }],
@@ -119,6 +119,14 @@ watch(
   () => route.query.page,
   (newPage) => {
     page.value = Number(newPage || 1);
+    window.scrollTo({ top: 0, behavior: 'smooth'})
   },
 );
+
+watchEffect(() => {
+  queryClient.prefetchQuery({
+    queryKey: ['products', { page: page.value + 1}],
+    queryFn: () => getProducts(page.value + 1)
+  })
+})
 </script>
