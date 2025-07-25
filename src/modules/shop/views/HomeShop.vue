@@ -91,16 +91,23 @@
 
   <!-- Product List -->
   <ProductList :products="products" :is-loading="isLoading" />
+  <PaginationButton :has-more-data="!!products && products.length < 10" :is-first-page="page === 1" :page="page" />
 </template>
 
 <script setup lang="ts">
 import { getProducts } from '@/modules/products/actions';
 import { useQuery } from '@tanstack/vue-query';
 import ProductList from '../components/products/ProductList.vue';
+import PaginationButton from '@/modules/common/components/PaginationButton.vue';
+import { useRoute } from 'vue-router';
+import { ref } from 'vue';
+
+const route = useRoute();
+const page = ref(Number(route.query.page || 1));
+console.log(page);
 
 const { data: products, isLoading } = useQuery({
-  queryKey: ['products', { page: 1 }],
-  queryFn: () => getProducts(),
+  queryKey: ['products', { page: page.value }],
+  queryFn: () => getProducts(page.value),
 });
-
 </script>
