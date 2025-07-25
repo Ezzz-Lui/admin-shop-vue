@@ -2,7 +2,7 @@ import { backendAPI } from '@/api/backendAPI';
 import type { Product } from '../interfaces/products.interfaces';
 import { getProductImage } from './getProductImage';
 
-export const getProducts = async (page: number = 1, limit: number = 12) => {
+export const getProducts = async (page: number = 1, limit: number = 10) => {
   try {
     const { data } = await backendAPI.get<Product[]>(
       `/products?limit=${limit}&&offset=${page * limit}`,
