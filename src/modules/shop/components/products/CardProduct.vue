@@ -4,7 +4,7 @@
   >
     <a href="#" class="flex flex-col h-full">
       <div class="relative flex items-end overflow-hidden rounded-xl">
-        <img :src="productImage" alt="product image grid" />
+        <img :src="productImage" alt="product image grid" class="h-[250px] object-cover" />
       </div>
 
       <div class="mt-1 p-2 flex flex-col flex-grow">
