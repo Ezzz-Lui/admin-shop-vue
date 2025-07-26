@@ -6,6 +6,7 @@
       <div class="mb-4">
         <label for="email" class="block text-gray-600">Email</label>
         <input
+          ref="emailInputRef"
           v-model="loginForm.email"
           type="text"
           id="email"
@@ -18,6 +19,7 @@
       <div class="mb-4">
         <label for="password" class="block text-gray-600">Password</label>
         <input
+          ref="passwordInputRef"
           v-model="loginForm.password"
           type="password"
           id="password"
@@ -58,11 +60,14 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
+import { toast } from 'vue-sonner';
 // import { useRouter } from 'vue-router';
 import { useAuthStore } from '../store/auth.store';
-
 // const router = useRouter();
+
+const emailInputRef = ref<HTMLInputElement | null>(null);
+const passwordInputRef = ref<HTMLInputElement | null>(null);
 
 const { login } = useAuthStore();
 
@@ -72,8 +77,50 @@ const loginForm = reactive({
   rememberMe: false,
 });
 
-const onLogin = () => {
-  console.log(loginForm);
-  login(loginForm.email, loginForm.password);
+const onLogin = async () => {
+  if (loginForm.email === '') {
+    return emailInputRef.value?.focus();
+  }
+
+  if (loginForm.password === '') {
+    return passwordInputRef.value?.focus();
+  }
+
+  if (loginForm.rememberMe) {
+    localStorage.setItem('email', loginForm.email);
+  } else localStorage.removeItem('email');
+
+  const ok = await login(loginForm.email, loginForm.password);
+
+  if (ok) {
+    toast.success('Login Success', {
+      description: 'Redirecting...',
+      action: {
+        label: 'Ok',
+      },
+    });
+    return;
+  } else {
+    toast.error('Authentication failed', {
+      description: 'Email or password incorrect, please verify and try again.',
+      action: {
+        label: 'Try',
+        onClick: () => {
+          passwordInputRef.value?.focus();
+        },
+      },
+    });
+  }
 };
+
+onMounted(() => {
+  const rememberedEmail = localStorage.getItem('email');
+  if (rememberedEmail) {
+    loginForm.email = rememberedEmail;
+    loginForm.rememberMe = true;
+    passwordInputRef.value?.focus();
+  } else {
+    emailInputRef.value?.focus();
+  }
+});
 </script>
