@@ -22,8 +22,9 @@ export const useAuthStore = defineStore('auth', () => {
       authStatus.value = AuthStatus.Authenticated;
       return true;
     } catch (error) {
+      console.error('Error getting login response:', error);
       logout();
-      throw new Error(`Error getting login response: ${error}`);
+      return false;
     }
   };
 
