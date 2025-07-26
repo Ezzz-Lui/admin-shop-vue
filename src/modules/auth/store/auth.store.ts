@@ -13,6 +13,7 @@ export const useAuthStore = defineStore('auth', () => {
     try {
       const loginResponse = await loginAction(email, password);
       if (!loginResponse.ok) {
+        logout();
         return false;
       }
 
@@ -43,5 +44,9 @@ export const useAuthStore = defineStore('auth', () => {
     isAuthenticated: computed(() => authStatus.value === AuthStatus.Authenticated),
     username: computed(() => user.value?.fullName),
     isAdmin: computed(() => user.value?.roles.includes('Admin, admin')),
+
+    // Actions
+    login,
+    logout,
   };
 });
