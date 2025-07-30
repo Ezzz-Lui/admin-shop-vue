@@ -1,6 +1,6 @@
 <template>
   <article
-    class="rounded-xl p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 h-full flex flex-col"
+    class="rounded-xl border p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 h-full flex flex-col"
   >
     <a href="#" class="flex flex-col h-full">
       <div class="relative flex items-end overflow-hidden rounded-xl">
@@ -20,7 +20,7 @@
         </div>
 
         <div class="mt-3 flex items-end justify-between">
-          <p class="text-lg font-bold text-blue-500">${{ productPrice }}</p>
+          <p class="text-xl font-semibold text-blue-500">${{ productPrice }}</p>
 
           <div
             class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600"
