@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 z-20 w-full border-b py-2.5 px-6 sm:px-4">
+  <nav class="fixed top-0 left-0 z-20 w-full border-b py-2.5 px-6 sm:px-4 backdrop-blur-md">
     <div class="container mx-auto flex max-w-6xl flex-wrap items-center justify-between">
       <a href="#" class="flex items-center">
         <svg
@@ -37,7 +37,7 @@
         <button
           @click="toggleDark()"
           type="button"
-          class="cursor-pointer rounde ml-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
+          class="cursor-pointer rounde ml-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
         >
           <template v-if="isDark">
             <Sun />
