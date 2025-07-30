@@ -20,14 +20,25 @@ const authStore = useAuthStore();
 authStore.$subscribe(
   async (_, state) => {
     if (state.authStatus === AuthStatus.checkingAuth) {
-      authStore.checkAuthTokenStatus();
-      toast.promise(authStore.checkAuthTokenStatus, {
-        loading: 'Checking your auth status...',
-        success: 'Auth verified',
-        error: 'Failed to check your auth',
+      toast.warning('Checking auth', {
+        description: 'Redirecting...',
+        duration: 1000,
       });
+      authStore.checkAuthTokenStatus();
+
       return;
     }
+
+    if(state.authStatus === AuthStatus.unAuthenticated){
+
+      router.replace({ name: 'Login' });
+
+      toast.error('Unauthenticated', {
+        description: 'Please login or create account...',
+        duration: 1000,
+      });
+    }
+
 
     if (route.path.includes('/auth') && state.authStatus === AuthStatus.Authenticated) {
       toast.success('Authenticated', {
