@@ -1,11 +1,11 @@
 <template>
   <!-- Title -->
-  <div class="pt-32 bg-white">
+  <div class="pt-32">
     <h1 class="text-center text-2xl font-bold text-gray-800">All Products</h1>
   </div>
   <!-- Tab Menu -->
   <div
-    class="flex flex-wrap items-center overflow-x-auto overflow-y-hidden py-10 justify-center bg-white text-gray-800"
+    class="flex flex-wrap items-center overflow-x-auto overflow-y-hidden py-10 justify-center text-gray-800"
   >
     <a
       rel="noopener noreferrer"
