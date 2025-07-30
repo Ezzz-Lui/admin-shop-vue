@@ -23,12 +23,14 @@
         <!-- Login Button -->
         <button
           type="button"
+          @click="router.push({ name: 'Login' })"
           class="cursor-pointer rounde mr-3 hidden border dark:border-0 py-1.5 px-6 text-center text-sm font-medium text-blue-700 dark:text-white md:inline-block rounded-lg hover:bg-gray-100 dark:hover:bg-stone-900"
         >
           Login
         </button>
         <button
           type="button"
+          @click="router.push({ name: 'Register' })"
           class="cursor-pointer rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
         >
           Register
@@ -87,25 +89,13 @@
             >
           </li>
           <li>
-            <a
-              href="#"
-              class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0"
-              >About</a
-            >
+            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0">About</a>
           </li>
           <li>
-            <a
-              href="#"
-              class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0"
-              >Services</a
-            >
+            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0">Services</a>
           </li>
           <li>
-            <a
-              href="#"
-              class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0"
-              >Contact</a
-            >
+            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0">Contact</a>
           </li>
         </ul>
       </div>
@@ -116,6 +106,9 @@
 <script setup lang="ts">
 import { Moon, Sun } from 'lucide-vue-next';
 import { useDark, useToggle } from '@vueuse/core';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
