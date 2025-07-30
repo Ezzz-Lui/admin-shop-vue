@@ -1,10 +1,10 @@
 <template>
   <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-    <h1 class="text-2xl font-semibold mb-4">Login</h1>
+    <h1 class="text-4xl font-semibold mb-4">Login</h1>
     <form @submit.prevent="onLogin">
       <!-- Username Input -->
       <div class="mb-4">
-        <label for="email" class="block text-gray-600">Email</label>
+        <label for="email" class="block text-stone-600">Email</label>
         <input
           ref="emailInputRef"
           v-model="loginForm.email"
@@ -17,7 +17,7 @@
       </div>
       <!-- Password Input -->
       <div class="mb-4">
-        <label for="password" class="block text-gray-600">Password</label>
+        <label for="password" class="block text-stone-600">Password</label>
         <input
           ref="passwordInputRef"
           v-model="loginForm.password"
@@ -37,7 +37,7 @@
           name="remember"
           class="text-stone-500"
         />
-        <label for="remember" class="text-gray-600 ml-2">Remember Me</label>
+        <label for="remember" class="text-stone-600 ml-2">Remember Me</label>
       </div>
       <!-- Forgot Password Link -->
       <div class="mb-6 text-stone-500">
