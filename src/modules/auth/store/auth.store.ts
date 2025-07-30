@@ -5,6 +5,7 @@ import { AuthStatus } from '../interfaces/auth.enum';
 import { loginAction } from '../actions/login.action';
 import { useLocalStorage } from '@vueuse/core';
 import { registerUserAction } from '../actions/register.action';
+import { checkAuthAction } from '../actions/tokenStatusCheck.action';
 
 export const useAuthStore = defineStore('auth', () => {
   const authStatus = ref<AuthStatus>(AuthStatus.checkingAuth);
@@ -56,6 +57,25 @@ export const useAuthStore = defineStore('auth', () => {
     return false;
   };
 
+  const checkAuthTokenStatus = async (): Promise<boolean> => {
+    const responseTokenStatus = await checkAuthAction();
+
+    try {
+      if (!responseTokenStatus.ok) {
+        logout();
+        return false;
+      }
+
+      authStatus.value = AuthStatus.Authenticated;
+      user.value = responseTokenStatus.user;
+      token.value = responseTokenStatus.token;
+      return true;
+    } catch (error) {
+      logout();
+      return false;
+    }
+  };
+
   return {
     user,
     token,
@@ -71,5 +91,6 @@ export const useAuthStore = defineStore('auth', () => {
     login,
     registerUser,
     logout,
+    checkAuthTokenStatus,
   };
 });
