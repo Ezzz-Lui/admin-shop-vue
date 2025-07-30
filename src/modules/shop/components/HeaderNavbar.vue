@@ -23,13 +23,13 @@
         <!-- Login Button -->
         <button
           type="button"
-          class="cursor-pointer rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg"
+          class="cursor-pointer rounde mr-3 hidden border dark:border-0 py-1.5 px-6 text-center text-sm font-medium text-blue-700 dark:text-white md:inline-block rounded-lg hover:bg-gray-100 dark:hover:bg-stone-900"
         >
           Login
         </button>
         <button
           type="button"
-          class="cursor-pointer rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
+          class="cursor-pointer rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
         >
           Register
         </button>
@@ -37,7 +37,7 @@
         <button
           @click="toggleDark()"
           type="button"
-          class="cursor-pointer rounde ml-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
+          class="cursor-pointer border dark:border-0 rounde ml-3 hidden py-1.5 px-3 text-center text-sm font-medium focus:outline-none md:mr-0 md:inline-block rounded-lg hover:bg-gray-100 dark:hover:bg-stone-900"
         >
           <template v-if="isDark">
             <Sun />
