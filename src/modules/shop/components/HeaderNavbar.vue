@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 z-20 w-full border-b border-gray-200 bg-white py-2.5 px-6 sm:px-4">
+  <nav class="fixed top-0 left-0 z-20 w-full border-b py-2.5 px-6 sm:px-4">
     <div class="container mx-auto flex max-w-6xl flex-wrap items-center justify-between">
       <a href="#" class="flex items-center">
         <svg
@@ -33,6 +33,20 @@
         >
           Register
         </button>
+
+        <button
+          @click="toggleDark()"
+          type="button"
+          class="cursor-pointer rounde ml-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
+        >
+          <template v-if="isDark">
+            <Sun />
+          </template>
+
+          <template v-else>
+            <Moon />
+          </template>
+        </button>
         <!-- Register Button -->
         <button
           data-collapse-toggle="navbar-sticky"
@@ -62,7 +76,7 @@
         id="navbar-sticky"
       >
         <ul
-          class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium"
+          class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:text-sm md:font-medium"
         >
           <li>
             <a
@@ -98,3 +112,11 @@
     </div>
   </nav>
 </template>
+
+<script setup lang="ts">
+import { Moon, Sun } from 'lucide-vue-next';
+import { useDark, useToggle } from '@vueuse/core';
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+</script>
