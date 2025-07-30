@@ -1,10 +1,10 @@
 <template>
   <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-    <h1 class="text-2xl font-semibold mb-4">Register</h1>
+    <h1 class="text-4xl font-semibold mb-4">Register</h1>
     <form action="#" method="POST">
       <!-- Username Input -->
       <div class="mb-4">
-        <label for="username" class="block text-gray-600">Username</label>
+        <label for="username" class="block text-stone-600">Username</label>
         <input
           type="text"
           id="username"
@@ -15,7 +15,7 @@
       </div>
       <!-- Password Input -->
       <div class="mb-4">
-        <label for="password" class="block text-gray-600">Password</label>
+        <label for="password" class="block text-stone-600">Password</label>
         <input
           type="password"
           id="password"
@@ -26,11 +26,11 @@
       </div>
       <!-- Remember Me Checkbox -->
       <div class="mb-4 flex items-center">
-        <input type="checkbox" id="remember" name="remember" class="text-blue-500" />
-        <label for="remember" class="text-gray-600 ml-2">Remember Me</label>
+        <input type="checkbox" id="remember" name="remember" class="text-stone-500" />
+        <label for="remember" class="text-stone-600 ml-2">Remember Me</label>
       </div>
       <!-- Forgot Password Link -->
-      <div class="mb-6 text-blue-500">
+      <div class="mb-6 text-stone-500">
         <a href="#" class="hover:underline">Forgot Password?</a>
       </div>
       <!-- Register Button -->
@@ -43,7 +43,7 @@
       </button>
     </form>
     <!-- Sign up  Link -->
-    <div class="mt-6 text-blue-500 text-center">
+    <div class="mt-6 text-stone-500 text-center">
       <RouterLink :to="{ name: 'Login' }" class="hover:underline"
         >Alreary have account? Sign in Here</RouterLink
       >
