@@ -9,14 +9,14 @@
 
       <div class="mt-1 p-2 flex flex-col flex-grow">
         <div class="flex-grow">
-          <h2 class="text-stone-700 font-semibold">
+          <h2 class="font-semibold dark:text-stone-300">
             {{ productTitle }}
             <span
               class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-blue-700/10 ring-inset capitalize"
               >{{ productTags?.join(',') }}</span
             >
           </h2>
-          <p class="mt-1 text-sm text-slate-400 capitalize">{{ productGender }}</p>
+          <p class="mt-1 text-sm text-stone-400 dark:text-stone-500 capitalize">{{ productGender }}</p>
         </div>
 
         <div class="mt-3 flex items-end justify-between">
