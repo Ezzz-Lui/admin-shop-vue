@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 z-20 w-full border-b py-2.5 px-6 sm:px-4 backdrop-blur-md">
+  <nav class="fixed top-0 left-0 z-20 w-full py-2.5 px-6 sm:px-4 backdrop-blur-md shadow-xl">
     <div class="container mx-auto flex max-w-6xl flex-wrap items-center justify-between">
       <a href="#" class="flex items-center">
         <svg
