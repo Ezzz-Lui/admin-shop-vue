@@ -1,11 +1,11 @@
 <template>
   <!-- Title -->
   <div class="pt-32">
-    <h1 class="text-center text-2xl font-bold text-gray-800">All Products</h1>
+    <h1 class="text-center text-2xl font-bold dark:text-stone-300">All Products</h1>
   </div>
   <!-- Tab Menu -->
   <div
-    class="flex flex-wrap items-center overflow-x-auto overflow-y-hidden py-10 justify-center text-gray-800"
+    class="flex flex-wrap items-center overflow-x-auto overflow-y-hidden py-10 justify-center dark:text-stone-300"
   >
     <a
       rel="noopener noreferrer"
@@ -29,7 +29,7 @@
     <a
       rel="noopener noreferrer"
       href="#"
-      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 rounded-t-lg text-gray-900"
+      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 rounded-t-lg dark:text-stone-300"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@
     <a
       rel="noopener noreferrer"
       href="#"
-      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-gray-600"
+      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 dark:text-stone-300"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@
     <a
       rel="noopener noreferrer"
       href="#"
-      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-gray-600"
+      class="flex items-center flex-shrink-0 px-5 py-3 space-x-2 dark:text-stone-300"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
