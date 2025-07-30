@@ -29,8 +29,7 @@ authStore.$subscribe(
       return;
     }
 
-    if(state.authStatus === AuthStatus.unAuthenticated){
-
+    if (state.authStatus === AuthStatus.unAuthenticated) {
       router.replace({ name: 'Login' });
 
       toast.error('Unauthenticated', {
@@ -39,12 +38,7 @@ authStore.$subscribe(
       });
     }
 
-
     if (route.path.includes('/auth') && state.authStatus === AuthStatus.Authenticated) {
-      toast.success('Authenticated', {
-        description: 'Redirecting...',
-        duration: 1000,
-      });
       router.replace({ name: 'home' });
       return;
     }
