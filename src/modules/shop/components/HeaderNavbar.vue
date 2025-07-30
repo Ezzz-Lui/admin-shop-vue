@@ -76,7 +76,7 @@
         id="navbar-sticky"
       >
         <ul
-          class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:text-sm md:font-medium"
+          class="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:text-sm md:font-medium"
         >
           <li>
             <a
