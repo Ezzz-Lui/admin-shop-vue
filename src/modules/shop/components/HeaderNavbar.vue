@@ -21,20 +21,43 @@
       </a>
       <div class="mt-2 sm:mt-0 sm:flex md:order-2">
         <!-- Login Button -->
-        <button
-          type="button"
-          @click="router.push({ name: 'Login' })"
-          class="cursor-pointer rounde mr-3 hidden border dark:border-0 py-1.5 px-6 text-center text-sm font-medium text-blue-700 dark:text-white md:inline-block rounded-lg hover:bg-gray-100 dark:hover:bg-stone-900"
-        >
-          Login
-        </button>
-        <button
-          type="button"
-          @click="router.push({ name: 'Register' })"
-          class="cursor-pointer rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
-        >
-          Register
-        </button>
+        <template v-if="!authStore.isAuthenticated">
+          <button
+            type="button"
+            @click="router.push({ name: 'Login' })"
+            class="cursor-pointer rounde mr-3 hidden border dark:border-0 py-1.5 px-6 text-center text-sm font-medium text-blue-700 dark:text-white md:inline-block rounded-lg hover:bg-gray-100 dark:hover:bg-stone-900"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            @click="router.push({ name: 'Register' })"
+            class="cursor-pointer rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
+          >
+            Register
+          </button>
+        </template>
+
+        <template v-else>
+          <button
+            type="button"
+            @click="
+              authStore.isAdmin
+                ? router.push({ name: 'AdminPanel' })
+                : router.push({ name: 'home' })
+            "
+            class="cursor-pointer rounde mr-3 hidden border dark:border-0 py-1.5 px-6 text-center text-sm font-medium text-blue-700 dark:text-white md:inline-block rounded-lg hover:bg-gray-100 dark:hover:bg-stone-900"
+          >
+            {{ authStore.isAdmin ? 'Admin' : 'My Account' }}
+          </button>
+          <button
+            type="button"
+            @click="authStore.logout"
+            class="cursor-pointer rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
+          >
+            Logout
+          </button>
+        </template>
 
         <button
           @click="toggleDark()"
@@ -107,7 +130,9 @@
 import { Moon, Sun } from 'lucide-vue-next';
 import { useDark, useToggle } from '@vueuse/core';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from '@/modules/auth/store/auth.store';
 
+const authStore = useAuthStore();
 const router = useRouter();
 
 const isDark = useDark();
