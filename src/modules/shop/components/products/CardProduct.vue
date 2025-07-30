@@ -1,6 +1,6 @@
 <template>
   <article
-    class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 h-full flex flex-col"
+    class="rounded-xl p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 h-full flex flex-col"
   >
     <a href="#" class="flex flex-col h-full">
       <div class="relative flex items-end overflow-hidden rounded-xl">
