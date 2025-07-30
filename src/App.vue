@@ -1,6 +1,7 @@
 <template>
   <Toaster rich-colors position="top-right" expand />
-  <RouterView />
+  <FullScreenLoader  v-if="authStore.isChecking"/>
+  <RouterView v-else/>
   <VueQueryDevtools />
 </template>
 
@@ -12,6 +13,7 @@ import { useAuthStore } from './modules/auth/store/auth.store';
 import { AuthStatus } from './modules/auth/interfaces/auth.enum';
 import { useRoute, useRouter } from 'vue-router';
 import { toast } from 'vue-sonner';
+import FullScreenLoader from './modules/common/components/FullScreenLoader.vue';
 
 const router = useRouter();
 const route = useRoute();
