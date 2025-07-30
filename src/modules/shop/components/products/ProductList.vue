@@ -1,5 +1,5 @@
 <template>
-  <section class="py-10 bg-white">
+  <section class="py-10">
     <div
       v-if="!isLoading"
       class="mx-auto grid max-w-7xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
