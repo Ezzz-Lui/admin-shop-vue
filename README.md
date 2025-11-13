@@ -2,6 +2,8 @@
 
 <img width="1920" height="1440" alt="899shots_so" src="https://github.com/user-attachments/assets/e1e627b4-8951-4434-aa69-3366880db84e" />
 <img width="1920" height="1440" alt="699_1x_shots_so" src="https://github.com/user-attachments/assets/4d008e1b-593d-4623-9755-d7204250e567" />
+<img width="1920" height="1080" alt="350_1x_shots_so" src="https://github.com/user-attachments/assets/57d70666-52ed-48b0-a02d-a0154e6f02b3" />
+
 
 
 
