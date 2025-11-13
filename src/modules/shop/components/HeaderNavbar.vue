@@ -2,22 +2,9 @@
   <nav class="fixed top-0 left-0 z-20 w-full py-2.5 px-6 sm:px-4 backdrop-blur-md shadow-xl">
     <div class="container mx-auto flex max-w-6xl flex-wrap items-center justify-between">
       <a href="#" class="flex items-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="mr-3 h-6 text-blue-500 sm:h-9"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
-          />
-        </svg>
 
-        <span class="self-center whitespace-nowrap text-xl font-semibold">SuperStore</span>
+        <Zap :size="16" class="mr-1"/>
+        <span class="self-center text-2xl tracking-wide font-extrabold">SuperStore</span>
       </a>
       <div class="mt-2 sm:mt-0 sm:flex md:order-2">
         <!-- Login Button -->
@@ -106,19 +93,19 @@
           <li>
             <a
               href="#"
-              class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0"
+              class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0 tracking-wide font-light"
               aria-current="page"
               >Home</a
             >
           </li>
           <li>
-            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0">About</a>
+            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0 tracking-wide font-light">About</a>
           </li>
           <li>
-            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0">Services</a>
+            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0 tracking-wide font-light">Services</a>
           </li>
           <li>
-            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0">Contact</a>
+            <a href="#" class="block rounded py-2 pl-3 pr-4 md:bg-transparent md:p-0 tracking-wide font-light">Contact</a>
           </li>
         </ul>
       </div>
@@ -127,7 +114,7 @@
 </template>
 
 <script setup lang="ts">
-import { Moon, Sun } from 'lucide-vue-next';
+import { Moon, Sun, Zap } from 'lucide-vue-next';
 import { useDark, useToggle } from '@vueuse/core';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/modules/auth/store/auth.store';
