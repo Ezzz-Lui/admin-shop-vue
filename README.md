@@ -1,6 +1,9 @@
-# admin-shop-vue
+# Admin e-Shop [vue]
 
-This template should help get you started developing with Vue 3 in Vite.
+<img width="1920" height="1440" alt="899shots_so" src="https://github.com/user-attachments/assets/e1e627b4-8951-4434-aa69-3366880db84e" />
+<img width="1920" height="1440" alt="699_1x_shots_so" src="https://github.com/user-attachments/assets/4d008e1b-593d-4623-9755-d7204250e567" />
+
+
 
 ## Recommended IDE Setup
 
