@@ -20,7 +20,7 @@
         </div>
 
         <div class="mt-3 flex items-end justify-between">
-          <p class="text-xl font-semibold text-blue-500">${{ productPrice }}</p>
+          <p class="text-xl font-extrabold text-blue-500">${{ productPrice }}</p>
 
           <div
             class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600"
